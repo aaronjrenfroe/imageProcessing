@@ -14,6 +14,7 @@
 		B1046C2D1DBDDB7100DAF931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1046C2B1DBDDB7100DAF931 /* LaunchScreen.storyboard */; };
 		B1046C381DBDDB7100DAF931 /* imageProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1046C371DBDDB7100DAF931 /* imageProcessingTests.swift */; };
 		B1046C431DBDDB7100DAF931 /* imageProcessingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1046C421DBDDB7100DAF931 /* imageProcessingUITests.swift */; };
+		B1046C511DBDE26D00DAF931 /* RGBA.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1046C501DBDE26D00DAF931 /* RGBA.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		B1046C3E1DBDDB7100DAF931 /* imageProcessingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = imageProcessingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1046C421DBDDB7100DAF931 /* imageProcessingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageProcessingUITests.swift; sourceTree = "<group>"; };
 		B1046C441DBDDB7100DAF931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B1046C501DBDE26D00DAF931 /* RGBA.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBA.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				B1046C221DBDDB7100DAF931 /* AppDelegate.swift */,
 				B1046C241DBDDB7100DAF931 /* ViewController.swift */,
+				B1046C501DBDE26D00DAF931 /* RGBA.swift */,
 				B1046C261DBDDB7100DAF931 /* Main.storyboard */,
 				B1046C291DBDDB7100DAF931 /* Assets.xcassets */,
 				B1046C2B1DBDDB7100DAF931 /* LaunchScreen.storyboard */,
@@ -188,7 +191,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Aaron Renfroe";
 				TargetAttributes = {
 					B1046C1E1DBDDB7100DAF931 = {
@@ -264,6 +267,7 @@
 			files = (
 				B1046C251DBDDB7100DAF931 /* ViewController.swift in Sources */,
 				B1046C231DBDDB7100DAF931 /* AppDelegate.swift in Sources */,
+				B1046C511DBDE26D00DAF931 /* RGBA.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +340,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -385,6 +390,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -419,6 +425,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.afterrabble.com.imageProcessing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -432,6 +439,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.afterrabble.com.imageProcessing;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -512,6 +520,7 @@
 				B1046C491DBDDB7100DAF931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1046C4A1DBDDB7100DAF931 /* Build configuration list for PBXNativeTarget "imageProcessingTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +529,7 @@
 				B1046C4C1DBDDB7100DAF931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B1046C4D1DBDDB7100DAF931 /* Build configuration list for PBXNativeTarget "imageProcessingUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +538,7 @@
 				B1046C4F1DBDDB7100DAF931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
