@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             }
             // all other times do normal stuff
             else{
-                newImage = overLay2(image1: newImage!, image2: image).toUIImage()!
+                newImage = average(image1: newImage!, image2: image).toUIImage()!
             }
             print(index1) // prints current image index
          
