@@ -63,10 +63,56 @@ public struct RGBA {
         let image = UIImage(cgImage: cgImage)
         return image
     }
+    
+    public func toCGImage() -> CGImage? {
+        let bitsPerComponent = 8
+        let bytesPerPixel = 4
+        let bytesPerRow = width * bytesPerPixel
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        var bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue
+        bitmapInfo |= CGImageAlphaInfo.premultipliedLast.rawValue & CGBitmapInfo.alphaInfoMask.rawValue
+        let imageContext = CGContext(data: pixels.baseAddress, width: width, height: height, bitsPerComponent: bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo, releaseCallback: nil, releaseInfo: nil)
+        guard let cgImage = imageContext!.makeImage() else {return nil}
+        let image = cgImage
+        return image
+    }
 }
 
-public func average(image1: UIImage, image2: UIImage) - UIImage{
+public func average(image1: UIImage, image2: UIImage) -> RGBA{
     
+        let rgba1 = RGBA(image: image1)!
+        
+        
+        let rgba2 = RGBA(image: image2)!
+        for y in 0..<rgba1.height {
+            for x in 0..<rgba1.width {
+                
+                let index = y * rgba1.width + x
+                
+                var pixel1 = rgba1.pixels[index]
+                let pixel2 = rgba2.pixels[index]
+                let newRed = Double(Int(pixel1.red) + Int(pixel2.red))/2.0
+                let newBlue = Double(Int(pixel1.blue) + Int(pixel2.blue))/2.0
+                let newGreen = Double(Int(pixel1.green) + Int(pixel2.green))/2.0
+                
+                if (newRed <= 255){
+                    
+                    pixel1.red = UInt8(newRed)
+                }
+                if (newBlue <= 255){
+                    
+                    pixel1.blue = UInt8(newBlue)
+                }
+                if (newGreen <= 255){
+                    
+                    pixel1.green = UInt8(newGreen)
+                }
+                
+                rgba1.pixels[index] = pixel1
+            }
+        }
+        
+        return rgba1
     
 }
 
