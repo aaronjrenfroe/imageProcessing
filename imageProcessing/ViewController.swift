@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  imageProcessing
 //
-//  Created by AaronR on 10/23/16.
-//  Copyright © 2016 Aaron Renfroe. All rights reserved.
+//  Created by Aaronr on 10/23/16.
+//  Copyright © 2016 Aaronr. All rights reserved.
 //
 
 import UIKit
@@ -25,6 +25,7 @@ class ViewController: UIViewController {
         for index1 in start...finish{
             
             let image = (UIImage(named:"IMG_\(index1).JPG")!)
+            
             //if first run through loop newImage will be nil
             if newImage == nil{
                 newImage = image
