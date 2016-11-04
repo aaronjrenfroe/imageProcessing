@@ -97,15 +97,15 @@ public func average(image1: UIImage, image2: UIImage) -> RGBA{
                 
                 if (newRed <= 255){
                     
-                    pixel1.red = UInt8(newRed)
+                    pixel1.red = UInt8(max(min(255, newRed), 0))
                 }
                 if (newBlue <= 255){
                     
-                    pixel1.blue = UInt8(newBlue)
+                    pixel1.blue = UInt8(max(min(255, newBlue), 0))
                 }
                 if (newGreen <= 255){
                     
-                    pixel1.green = UInt8(newGreen)
+                    pixel1.green = UInt8(max(min(255, newGreen), 0))
                 }
                 
                 rgba1.pixels[index] = pixel1
@@ -128,46 +128,6 @@ public func monoColor(image: UIImage) -> RGBA {
             pixel.red = average
             pixel.green = average
             pixel.blue = average
-            rgba.pixels[index] = pixel
-        }
-    }
-    return rgba
-}
-
-
-
-
-public func contrast(image: UIImage) -> RGBA {
-    let rgba = RGBA(image: image)!
-    var totalRed = 0
-    var totalGreen = 0
-    var totalBlue = 0
-    
-    for y in 0..<rgba.height {
-        for x in 0..<rgba.width {
-            let index = y * rgba.width + x
-            let pixel = rgba.pixels[index]
-            totalRed += Int(pixel.red)
-            totalGreen += Int(pixel.green)
-            totalBlue += Int(pixel.blue)
-        }
-    }
-    
-    let pixelCount = rgba.width * rgba.height
-    let avgRed = totalRed / pixelCount
-    let avgGreen = totalGreen / pixelCount
-    let avgBlue = totalBlue / pixelCount
-    
-    for y in 0..<rgba.height {
-        for x in 0..<rgba.width {
-            let index = y * rgba.width + x
-            var pixel = rgba.pixels[index]
-            let redDelta = Int(pixel.red) - avgRed
-            let greenDelta = Int(pixel.green) - avgGreen
-            let blueDelta = Int(pixel.blue) - avgBlue
-            pixel.red = UInt8(max(min(255, avgRed + 2 * redDelta), 0))
-            pixel.green = UInt8(max(min(255, avgGreen + 2 * greenDelta), 0))
-            pixel.blue = UInt8(max(min(255, avgBlue + 2 * blueDelta), 0))
             rgba.pixels[index] = pixel
         }
     }

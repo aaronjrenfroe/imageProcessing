@@ -17,11 +17,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //logAllFilters()
-        //let image = UIImage(named: "dark1.jpg")!
+
         var newImage: UIImage? = nil
-        let start = 0
-        let finish = 30
+        let start = 4017
+        let finish = 4048
         
         for index1 in start...finish{
             
@@ -34,20 +33,20 @@ class ViewController: UIViewController {
             else{
                 newImage = average(image1: newImage!, image2: image).toUIImage()!
             }
+            // can a Do somethine here to free up memory
             print(index1) // prints current image index
          
         }
         
         imageView.image = newImage
         
-        
-        // Do any additional setup after loading the view, typically from a nib.
     }
     
 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // can I put something here to free up some memory
 
     }
 
